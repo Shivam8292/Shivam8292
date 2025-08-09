@@ -1,7 +1,7 @@
 <h1 align="left">Hi 👋, I'm Shivam Kumar</h1>
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=shivam8292&label=Profile%20views&color=0e75b6&style=flat" alt="shivam8292" /> </p>
 
-<h3 align="left">Welcome to my GitHub profile! I'm Sumit, a passionate developer and lifelong learner. Here's a bit about me:
+<h3 align="left">Welcome to my GitHub profile! I'm Shivam, a passionate developer and lifelong learner. Here's a bit about me:
 
 </h3>
 
