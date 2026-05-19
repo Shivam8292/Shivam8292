@@ -1,97 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="240">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 160" width="100%" height="160">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&amp;family=JetBrains+Mono:wght@200;300;400&amp;display=swap');
     .bg { fill: #09090b; }
-    .text-title {
+    .text-name {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      font-weight: 800;
-      font-size: 38px;
+      font-weight: 200;
+      font-size: 34px;
       fill: #ffffff;
-      letter-spacing: -1px;
+      letter-spacing: 2px;
     }
-    .text-subtitle {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      fill: #a1a1aa;
-      letter-spacing: 0.5px;
+    .text-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 300;
+      font-size: 13px;
+      fill: #71717a;
+      letter-spacing: 1px;
     }
-    .grid-dot {
-      fill: #27272a;
-      animation: pulseDot 4s infinite ease-in-out;
+    .status-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      fill: #52525b;
+      letter-spacing: 1px;
     }
-    .grid-line {
+    .status-dot {
+      fill: #10b981;
+      animation: pulse 2.5s infinite ease-in-out;
+    }
+    .border-line {
       stroke: #18181b;
       stroke-width: 1;
     }
-    .glow-circle {
-      fill: url(#glowGrad);
-      filter: blur(40px);
-      opacity: 0.6;
-      animation: drift 8s infinite alternate ease-in-out;
+    .cursor {
+      fill: #71717a;
+      animation: blink 0.8s infinite steps(2);
     }
-    @keyframes pulseDot {
-      0%, 100% { opacity: 0.4; fill: #27272a; }
-      50% { opacity: 1; fill: #3b82f6; }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; r: 3; filter: drop-shadow(0 0 0px #10b981); }
+      50% { opacity: 1; r: 4.5; filter: drop-shadow(0 0 4px #10b981); }
     }
-    @keyframes drift {
-      0% { transform: translate(0px, 0px); }
-      100% { transform: translate(40px, -20px); }
+    @keyframes blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
     }
   </style>
+  
   <defs>
-    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3" />
-      <stop offset="60%" stop-color="#1d4ed8" stop-opacity="0.1" />
-      <stop offset="100%" stop-color="#09090b" stop-opacity="0" />
-    </radialGradient>
+    <clipPath id="typeClip">
+      <rect x="0" y="0" width="0" height="30">
+        <animate attributeName="width" values="0; 250; 250; 0" keyTimes="0; 0.6; 0.9; 1" dur="5s" repeatCount="indefinite" />
+      </rect>
+    </clipPath>
   </defs>
 
-  <!-- Background -->
-  <rect width="800" height="240" rx="12" class="bg" />
+  <rect width="800" height="160" rx="8" class="bg" />
+  
+  <!-- Subtle divider lines -->
+  <line x1="40" y1="30" x2="760" y2="30" class="border-line" />
+  <line x1="40" y1="130" x2="760" y2="130" class="border-line" />
 
-  <!-- Subtle Radial Glow -->
-  <circle cx="650" cy="120" r="150" class="glow-circle" />
-
-  <!-- Technical Grid Pattern -->
-  <g>
-    <!-- Vertical lines -->
-    <line x1="450" y1="0" x2="450" y2="240" class="grid-line" />
-    <line x1="530" y1="0" x2="530" y2="240" class="grid-line" />
-    <line x1="610" y1="0" x2="610" y2="240" class="grid-line" />
-    <line x1="690" y1="0" x2="690" y2="240" class="grid-line" />
-    <line x1="770" y1="0" x2="770" y2="240" class="grid-line" />
-    
-    <!-- Horizontal lines -->
-    <line x1="400" y1="50" x2="800" y2="50" class="grid-line" />
-    <line x1="400" y1="120" x2="800" y2="120" class="grid-line" />
-    <line x1="400" y1="190" x2="800" y2="190" class="grid-line" />
+  <!-- Name & Title -->
+  <g transform="translate(60, 84)">
+    <text class="text-name" x="0" y="0">shivam kumar</text>
+    <g transform="translate(2, 10)">
+      <g clip-path="url(#typeClip)">
+        <text class="text-title" x="0" y="14">systems &amp; intelligent pipelines</text>
+      </g>
+      <rect class="cursor" x="235" y="2" width="6" height="14">
+        <animate attributeName="x" values="0; 235; 235; 0" keyTimes="0; 0.6; 0.9; 1" dur="5s" repeatCount="indefinite" />
+      </rect>
+    </g>
   </g>
 
-  <!-- Coordinate Nodes (AI/Vector representation) -->
-  <g>
-    <circle cx="450" cy="50" r="4" class="grid-dot" style="animation-delay: 0s;" />
-    <circle cx="530" cy="50" r="4" class="grid-dot" style="animation-delay: 0.5s;" />
-    <circle cx="610" cy="50" r="4" class="grid-dot" style="animation-delay: 1s;" />
-    <circle cx="690" cy="50" r="4" class="grid-dot" style="animation-delay: 1.5s;" />
-    <circle cx="770" cy="50" r="4" class="grid-dot" style="animation-delay: 2s;" />
-
-    <circle cx="450" cy="120" r="4" class="grid-dot" style="animation-delay: 0.8s;" />
-    <circle cx="530" cy="120" r="4" class="grid-dot" style="animation-delay: 1.3s;" />
-    <circle cx="610" cy="120" r="4" class="grid-dot" style="animation-delay: 1.8s;" />
-    <circle cx="690" cy="120" r="4" class="grid-dot" style="animation-delay: 2.3s;" />
-    <circle cx="770" cy="120" r="4" class="grid-dot" style="animation-delay: 2.8s;" />
-
-    <circle cx="450" cy="190" r="4" class="grid-dot" style="animation-delay: 1.6s;" />
-    <circle cx="530" cy="190" r="4" class="grid-dot" style="animation-delay: 2.1s;" />
-    <circle cx="610" cy="190" r="4" class="grid-dot" style="animation-delay: 2.6s;" />
-    <circle cx="690" cy="190" r="4" class="grid-dot" style="animation-delay: 3.1s;" />
-    <circle cx="770" cy="190" r="4" class="grid-dot" style="animation-delay: 3.6s;" />
-  </g>
-
-  <!-- Typography -->
-  <g transform="translate(60, 110)">
-    <text class="text-title" x="0" y="0">SHIVAM KUMAR</text>
-    <text class="text-subtitle" x="0" y="32">AI Developer &amp; RAG Systems Engineer</text>
+  <!-- Status Indicator -->
+  <g transform="translate(670, 72)">
+    <circle cx="0" cy="0" r="3.5" class="status-dot" />
+    <text class="status-text" x="12" y="4">SYS_ACTIVE</text>
   </g>
 </svg>
