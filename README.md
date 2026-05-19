@@ -1,7 +1,5 @@
-# 🚀 Shivam Kumar
-
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=24&duration=2000&pause=1000&color=00FFCC&center=true&vCenter=true&width=600&lines=%E2%9C%A7+AI+%26+RAG+Engineer+%E2%9C%A7;%E2%9C%A7+Semantic+Search+Specialist+%E2%9C%A7;%E2%9C%A7+Full+Stack+Developer+%E2%9C%A7" alt="Typing SVG" />
+  <img src="./banner.svg" alt="Shivam Kumar - AI/RAG Developer Banner" width="100%" />
 </p>
 
 <p align="center">
@@ -21,14 +19,6 @@
   "core_philosophy": "Transforming unstructured data into actionable intelligence."
 }
 ```
-
----
-
-## 🏆 Achievements & Badges
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Shivam8292&theme=radical&no-bg=true&column=6" alt="Shivam's Trophies" />
-</p>
 
 ---
 
